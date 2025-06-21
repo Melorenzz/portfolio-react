@@ -1,0 +1,21 @@
+h1{
+  font-size: 72px;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #fff , #dbeafe , #e9d5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: 361px;
+  span{
+    background-image: linear-gradient(to right, #a855f7, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.home_section{
+  margin-top: 200px;
+}
+.home_main{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

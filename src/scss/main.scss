@@ -1,0 +1,52 @@
+@use '_null';
+@use '_colors';
+@use '_header';
+@use '_home';
+@use '_about';
+@use '_footer';
+@use 'showcase';
+
+.container{
+  max-width: 1527px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+section{
+  margin-top: 150px;
+}
+.subtitle{
+
+  width: fit-content;
+  font-size: 22px;
+  margin-top: 10px;
+  font-weight: 500;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 2.2rem;
+}
+.title{
+  text-align: center;
+}
+h2 {
+  color: #E5E7EB;
+
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 5rem;
+
+  span {
+    background-image: linear-gradient(to right, #a855f7, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+}
+body{
+  background: linear-gradient(135deg, #0a081a, #1e1a40, #1a1a2f);
+  background-attachment: fixed;}
+*{
+  color: #9ca3af;
+  font-family: "Poppins", sans-serif;
+}
