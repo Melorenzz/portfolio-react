@@ -1,4 +1,4 @@
-export default function About(){
+export default function About({projects, certificates}) {
     return(
        <section className='about_section'>
            <div className="container">
@@ -28,53 +28,86 @@ export default function About(){
 
                 </div>
                <div className='about_columns'>
-                    <div className='about_column'>
+                    <a href='#showcase' className='about_column'>
                         <div className='top_column'>
                             <div className='icon'>
-                                <img src="" alt=""/>
-                            </div>
-                            <span className='count'>13</span>
-                        </div>
-                        <div className='info'>
-                            <p className='column_title'>TOTAL PROJECTS</p>
-                            <div className='description'>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <img src="" alt=""/>
-                            </div>
-                        </div>
-                    </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" className="lucide lucide-code w-8 h-8">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
 
-                    <div className='about_column'>
-                        <div className='top_column'>
-                            <div className='icon'>
-                                <img src="" alt=""/>
                             </div>
-                            <span className='count'>13</span>
+                            <span className='count'>{projects.length}</span>
                         </div>
                         <div className='info'>
                             <p className='column_title'>TOTAL PROJECTS</p>
                             <div className='description'>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <img src="" alt=""/>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     className="lucide lucide-arrow-up-right w-4 h-4 text-white/50 group-hover:text-white transition-colors">
+                                    <path d="M7 7h10v10"></path>
+                                    <path d="M7 17 17 7"></path>
+                                </svg>
                             </div>
                         </div>
-                    </div>
-                    <div className='about_column'>
+                    </a>
+
+                    <a href='#showcase'  className='about_column'>
                         <div className='top_column'>
                             <div className='icon'>
-                                <img src="" alt=""/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award w-8 h-8">
+                                    <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+                                    <circle cx="12" cy="8" r="6"></circle>
+                                </svg>
+
                             </div>
-                            <span className='count'>13</span>
+                            <span className='count'>{certificates.length}</span>
                         </div>
                         <div className='info'>
-                            <p className='column_title'>TOTAL PROJECTS</p>
+                            <p className='column_title'>CERTIFICATES</p>
                             <div className='description'>
                                 <p>Lorem ipsum dolor sit amet.</p>
-                                <img src="" alt=""/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     className="lucide lucide-arrow-up-right w-4 h-4 text-white/50 group-hover:text-white transition-colors">
+                                    <path d="M7 7h10v10"></path>
+                                    <path d="M7 17 17 7"></path>
+                                </svg>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </a>
+                    <a href='#showcase' className='about_column'>
+                        <div className='top_column'>
+                            <div className='icon'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe w-8 h-8">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                                    <path d="M2 12h20"></path>
+                                </svg>
+
+                            </div>
+                            <span className='count'>1</span>
+                        </div>
+                        <div className='info'>
+                            <p className='column_title'>YEARS OF EXPERIENCE</p>
+                            <div className='description'>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     className="lucide lucide-arrow-up-right w-4 h-4 text-white/50 group-hover:text-white transition-colors">
+                                    <path d="M7 7h10v10"></path>
+                                    <path d="M7 17 17 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+               </div>
            </div>
        </section>
     )

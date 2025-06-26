@@ -1,18 +1,43 @@
-export default function(){
-    return(
-        <header>
+import React, { useEffect, useState } from 'react';
+
+export default function Header() {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY || window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+
+            if (scrollPercent > 100) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        handleScroll();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    return (
+        <header className={scrolled ? 'scrolled_header' : ''}>
             <div className="container header_container">
                 <a className='header_logo' href="">Melorenz</a>
                 <nav>
                     <ul className='header_nav'>
-                        <li><a href="#">Home</a> </li>
-                        <li><a href="#About">About</a> </li>
-                        <li><a href="#Portfolio">Portfolio</a> </li>
-                        <li><a href="#Contact">Contact</a> </li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#About">About</a></li>
+                        <li><a href="#Portfolio">Portfolio</a></li>
+                        <li><a href="#Contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
-
         </header>
-    )
+    );
 }

@@ -1,3 +1,16 @@
+header{
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  transition: all .3s;
+}
+.scrolled_header{
+  background-color: rgba(10, 8, 26, 0.38);
+  backdrop-filter: blur(20px);
+}
 .header_container{
   display: flex;
   justify-content: space-between;

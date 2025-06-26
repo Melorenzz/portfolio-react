@@ -4,7 +4,11 @@
 @use '_home';
 @use '_about';
 @use '_footer';
-@use 'showcase';
+@use '_showcase';
+@use '_modal';
+html {
+  scroll-behavior: smooth;
+}
 
 .container{
   max-width: 1527px;
