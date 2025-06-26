@@ -5,24 +5,15 @@ export default function Header() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollTop = window.scrollY || window.pageYOffset;
+            const scrollTop = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             const scrollPercent = (scrollTop / docHeight) * 100;
 
-            if (scrollPercent > 100) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
+            setScrolled(scrollPercent >= 5);
         };
 
         window.addEventListener('scroll', handleScroll);
-
-        handleScroll();
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
@@ -33,7 +24,7 @@ export default function Header() {
                     <ul className='header_nav'>
                         <li><a href="#">Home</a></li>
                         <li><a href="#About">About</a></li>
-                        <li><a href="#Portfolio">Portfolio</a></li>
+                        <li><a href="#showcase">Portfolio</a></li>
                         <li><a href="#Contact">Contact</a></li>
                     </ul>
                 </nav>

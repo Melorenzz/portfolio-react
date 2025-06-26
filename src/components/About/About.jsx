@@ -1,29 +1,34 @@
+
+
 export default function About({projects, certificates}) {
+
     return(
-       <section className='about_section'>
+       <section id='About' className='about_section'>
            <div className="container">
-               <h2 className='title'> <span>About me</span> </h2>
-               <p className='subtitle'>Transforming ideas into digital experiences</p>
+               <h2 data-aos="zoom-in-up" className='title'> <span>About me</span> </h2>
+               <p data-aos="zoom-in-up"  className='subtitle'>Transforming ideas into digital experiences</p>
                 <div className='about_container'>
                     <div>
-                        <h2><span>Hello, I'm</span> <br />
+                        <h2 data-aos="fade-right"><span>Hello, I'm</span> <br />
                             Mykhailo
                             Melorenz
                         </h2>
-                        <p className='subtitle'>
-                            Seorang lulusan Teknik Jaringan Komputer dan Telekomunikasi yang memiliki ketertarikan besar dalam pengembangan Front-End. Saya berfokus pada menciptakan pengalaman digital yang menarik dan selalu berusaha memberikan solusi terbaik dalam setiap proyek yang saya kerjakan.
+                        <p data-aos="fade-right" className='subtitle'>
+                            A self-taught Front-End developer with a strong passion for creating engaging and user-friendly digital experiences. Deeply interested in Front-End technologies, I constantly explore new tools and trends to improve my skills. I always aim to deliver high-quality and effective solutions in every project I work on.
                         </p>
-                        <div className='about_buttons'>
+                        <div data-aos="fade-up" className='about_buttons'>
                             <button>Download CV</button>
                             <button>View Projects</button>
                         </div>
-                    </div>
-                    <div className='my_ava'>
 
-                        <img
-                            src="https://img06.rl0.ru/afisha/e1200x800i/daily.afisha.ru/uploads/images/8/8d/88d6442cbd039e053ffd12ada57de486.jpg"
-                            alt=""/>
-                        <div className="pulse-ring"></div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <div  className='my_ava'>
+                            <img
+                                src="https://media.discordapp.net/attachments/1080527252627914815/1387793519787376700/IMG_4481.jpg?ex=685ea2ef&is=685d516f&hm=7111ec2481d85b1af0076a871639afc896f1beefe55d2a5260efb1f1d481c255&=&format=webp&width=720&height=960"
+                                alt=""/>
+                            <div className="pulse-ring"></div>
+                        </div>
                     </div>
 
                 </div>
@@ -39,12 +44,12 @@ export default function About({projects, certificates}) {
                                 </svg>
 
                             </div>
-                            <span className='count'>{projects.length}</span>
+                            <span data-aos="fade-left" className='count'>{projects.length}</span>
                         </div>
                         <div className='info'>
-                            <p className='column_title'>TOTAL PROJECTS</p>
+                            <p data-aos="fade-up" className='column_title'>TOTAL PROJECTS</p>
                             <div className='description'>
-                            <p>Lorem ipsum dolor sit amet.</p>
+                            <p data-aos="fade-up">Lorem ipsum dolor sit amet.</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                      stroke-linejoin="round"
@@ -65,12 +70,12 @@ export default function About({projects, certificates}) {
                                 </svg>
 
                             </div>
-                            <span className='count'>{certificates.length}</span>
+                            <span data-aos="fade-left" className='count'>{certificates.length}</span>
                         </div>
                         <div className='info'>
-                            <p className='column_title'>CERTIFICATES</p>
+                            <p data-aos="fade-up" className='column_title'>CERTIFICATES</p>
                             <div className='description'>
-                                <p>Lorem ipsum dolor sit amet.</p>
+                                <p data-aos="fade-up">Lorem ipsum dolor sit amet.</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                      stroke-linejoin="round"
@@ -91,12 +96,12 @@ export default function About({projects, certificates}) {
                                 </svg>
 
                             </div>
-                            <span className='count'>1</span>
+                            <span data-aos="fade-left" className='count'>1</span>
                         </div>
                         <div className='info'>
-                            <p className='column_title'>YEARS OF EXPERIENCE</p>
+                            <p data-aos="fade-up" className='column_title'>YEARS OF EXPERIENCE</p>
                             <div className='description'>
-                                <p>Lorem ipsum dolor sit amet.</p>
+                                <p data-aos="fade-up">Lorem ipsum dolor sit amet.</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                      stroke-linejoin="round"
