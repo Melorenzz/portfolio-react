@@ -25,7 +25,7 @@
   border-radius: 50%;
   overflow: hidden;
   transition: all .8s;
-
+  box-shadow: 0 0 50px 20px rgba(78, 0, 165, 0.3);
   // Убрали pointer
   // cursor: pointer;
   &:hover{

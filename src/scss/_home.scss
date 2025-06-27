@@ -5,6 +5,9 @@ h1{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   max-width: 361px;
+  filter:
+          drop-shadow(-6px 0 50px rgba(0, 194, 255, 0.6)) /* синяя тень слева */
+          drop-shadow(6px 0 50px rgba(255, 0, 166, 0.6));
   span{
     background-image: linear-gradient(to right, #a855f7, #6366f1);
     -webkit-background-clip: text;
@@ -64,19 +67,48 @@ h1{
         background: black;
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.14);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 20px 5px rgba(78, 0, 165, 0.3);
+        transition: all .3s;
+        &:before{
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background: rgba(78, 0, 165, 0.36);
+          transition: all .3s;
+        }
+        &:hover:before{
+          width: 100%;
+        }
+        &:hover{
+          box-shadow: 0 0 20px 5px rgba(78, 0, 165, 0.9);
+
+        }
+
       }
     }
     .socials{
-      margin-top: 20px;
+      margin-top: 30px;
       display: flex;
       gap: 20px;
+
       .block{
+        box-shadow: 0 0 20px 5px rgba(78, 0, 165, 0.3);
         width: 40px;
         height: 40px;
         border-radius: 10px;
         background: #00000080;
         border: 1px solid rgba(255, 255, 255, 0.15);
         padding: 10px;
+        transition: all .3s;
+        &:hover{
+          box-shadow: 0 0 20px 5px rgba(78, 0, 165, 0.9);
+
+        }
       }
     }
   }

@@ -6,13 +6,13 @@ export default function Showcase({projects, certificates}) {
     const [modalImage, setModalImage] = useState(null)
 
     const techStack = [
-        {image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png', title: 'HTML', anim: 'right'},
-        {image: null, title: 'CSS', anim: 'down'},
-        {image: null, title: 'JavaScript', anim: 'left'},
-        {image: null, title: 'SCSS', anim: 'right'},
-        {image: null, title: 'Tailwind CSS', anim: 'down'},
-        {image: null, title: 'ReactJS', anim: 'left'},
-        {image: null, title: 'Vite', anim: 'right'},
+        {image: '../../../public/images/icons/html-icon.svg', title: 'HTML', anim: 'right'},
+        {image: '../../../public/images/icons/css-icon.svg', title: 'CSS', anim: 'down'},
+        {image: '../../../public/images/javascript-icon.svg', title: 'JavaScript', anim: 'left'},
+        {image: '../../../public/images/icons/sass-icon.svg', title: 'SCSS', anim: 'right'},
+        {image: '../../../public/images/icons/tailwind-css-icon.svg', title: 'Tailwind CSS', anim: 'down'},
+        {image: '../../../public/images/icons/react-js-icon.svg', title: 'ReactJS', anim: 'left'},
+        {image: '../../../public/images/icons/vite-icon.svg', title: 'Vite', anim: 'right'},
     ]
 
     function openModal(image) {
@@ -21,6 +21,7 @@ export default function Showcase({projects, certificates}) {
     }
 
     return (
+
         <section id='showcase' className="section">
             <Modal isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} image={modalImage} />
             <div className="container">
