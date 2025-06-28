@@ -11,14 +11,32 @@
     grid-template-columns: repeat(3, 1fr);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
+    .item, .item_active{
+      border-radius: 15px;
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      transition: all .3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      &:hover{
+        transform: translateY(-2px);
+      }
+      &:hover img{
+        transform: scale(1.1) rotate(5deg);
+      }
+      img{
+        transition: all .3s;
+
+      }
+    }
     .item{
       //background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2)); height: 100%;
-      border-radius: 15px;
-      font-weight: 700;
-      font-size: 18px;
-      color: white;
       background: transparent;
-      transition: all .3s;
+      color: rgb(141, 157, 177);
       &:hover{
         background: rgba(168, 85, 247, 0.13);
         transform: translateY(-2px);
@@ -26,22 +44,14 @@
     }
     .item_active{
       background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2)); height: 100%;
-      border-radius: 15px;
-      font-weight: 700;
-      font-size: 18px;
-      color: white;
-      transition: all .3s;
-      &:hover{
-        transform: translateY(-2px);
-      }
     }
   }
 }
 .projects{
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 475px);
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr)) ;
+  grid-template-rows: repeat(auto-fill, 475px);
   gap: 20px;
   padding: 0 20px;
   .block {
@@ -128,6 +138,8 @@
 .certificates{
   display: grid;
   padding: 0 20px;
+  width: 100%;
+
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
   cursor: pointer;
@@ -135,7 +147,7 @@
     width: 100%;
     height: 100%;
     position: relative;
-    transition: all 0.3s ;
+    transition: all 0.3s !important;
     border-radius: 15px;
     overflow: hidden;
     &:hover{
@@ -168,10 +180,11 @@
 .tech_stack{
   display: grid;
   gap: 40px;
-  grid-template-columns: repeat(5, 180px) minmax(170px, 180px);
-  grid-template-rows: repeat(2, 190px);
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+
   justify-content: center;
   .block{
+    height: 190px;
     background: #1e293b80;
     border-radius: 15px;
     display: flex;

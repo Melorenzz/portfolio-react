@@ -1,19 +1,21 @@
-import {useState} from 'react'
+import {useState, useMemo} from 'react'
 import Modal from './Modal'
 export default function Showcase({projects, certificates}) {
     const [selectedCategory, setSelectedCategory] = useState('Projects')
     const [isOpenModal, setIsOpenModal] = useState(false)
     const [modalImage, setModalImage] = useState(null)
 
-    const techStack = [
-        {image: '../../../public/images/icons/html-icon.svg', title: 'HTML', anim: 'right'},
-        {image: '../../../public/images/icons/css-icon.svg', title: 'CSS', anim: 'down'},
-        {image: '../../../public/images/javascript-icon.svg', title: 'JavaScript', anim: 'left'},
-        {image: '../../../public/images/icons/sass-icon.svg', title: 'SCSS', anim: 'right'},
-        {image: '../../../public/images/icons/tailwind-css-icon.svg', title: 'Tailwind CSS', anim: 'down'},
-        {image: '../../../public/images/icons/react-js-icon.svg', title: 'ReactJS', anim: 'left'},
-        {image: '../../../public/images/icons/vite-icon.svg', title: 'Vite', anim: 'right'},
-    ]
+    const techStack = useMemo(() =>
+        [
+            {image: '../../../public/images/icons/html-icon.svg', title: 'HTML', anim: 'right'},
+            {image: '../../../public/images/icons/css-icon.svg', title: 'CSS', anim: 'down'},
+            {image: '../../../public/images/icons/javascript-icon.svg', title: 'JavaScript', anim: 'left'},
+            {image: '../../../public/images/icons/sass-icon.svg', title: 'SCSS', anim: 'right'},
+            {image: '../../../public/images/icons/tailwind-css-icon.svg', title: 'Tailwind CSS', anim: 'down'},
+            {image: '../../../public/images/icons/react-js-icon.svg', title: 'ReactJS', anim: 'left'},
+            {image: '../../../public/images/icons/vite-icon.svg', title: 'Vite', anim: 'right'},
+        ]
+    , [])
 
     function openModal(image) {
         setIsOpenModal(true)
@@ -29,32 +31,35 @@ export default function Showcase({projects, certificates}) {
                 <p data-aos="fade-up" className='subtitle'>Explore my journey through projects, certifications, and technical expertise. Each <br /> section represents a milestone in my continuous learning path.</p>
                 <div className='showcase_selector'>
                     <div className='selector'>
-                        <button onClick={() => setSelectedCategory('Projects')} className={selectedCategory === 'Projects' ? 'item_active' : 'item'}>
-                            <img src="" alt=""/>
+                        <button onClick={() => setSelectedCategory('Projects')}
+                                className={selectedCategory === 'Projects' ? 'item_active' : 'item'}>
+                            <img src="../../../public/images/icons/projects.svg" alt=""/>
                             Projects
                         </button>
-                        <button onClick={() => setSelectedCategory('Certificates')} className={selectedCategory === 'Certificates' ? 'item_active' : 'item'}>
-                            <img src="" alt=""/>
+                        <button onClick={() => setSelectedCategory('Certificates')}
+                                className={selectedCategory === 'Certificates' ? 'item_active' : 'item'}>
+                            <img src="../../../public/images/icons/certificates.svg" alt=""/>
                             Certificates
                         </button>
-                        <button onClick={() => setSelectedCategory('Tech Stack')} className={selectedCategory === 'Tech Stack' ? 'item_active' : 'item'}>
-                            <img src="" alt=""/>
+                        <button onClick={() => setSelectedCategory('Tech Stack')}
+                                className={selectedCategory === 'Tech Stack' ? 'item_active' : 'item'}>
+                            <img src="../../../public/images/icons/tech-stack.svg" alt=""/>
                             Tech Stack
                         </button>
                     </div>
                     {selectedCategory === 'Projects' && (
                         <div className='projects'>
                             {projects.map((project, index) => (
-                            <div data-aos={`fade-${project.anim}`} key={index} className="block">
-                                <div>
-                                    <img className='project_thumbnail' src={project.image} alt=""/>
-                                    <h3 className='project_name'>{project.title}</h3>
-                                    <p className='project_description'>{project.description}</p>
-                                </div>
-                                <div className='buttons'>
-                                    <a href="">Live Demo</a>
-                                    <button>Details &rarr;</button>
-                                </div>
+                                <div data-aos={`fade-${project.anim}`} key={index} className="block">
+                                    <div>
+                                        <img className='project_thumbnail' src={project.image} alt=""/>
+                                        <h3 className='project_name'>{project.title}</h3>
+                                        <p className='project_description'>{project.description}</p>
+                                    </div>
+                                    <div className='buttons'>
+                                        <a href="">Live Demo</a>
+                                        <button>Details &rarr;</button>
+                                    </div>
                             </div>
                             ))}
                         </div>

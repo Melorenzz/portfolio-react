@@ -1,9 +1,9 @@
+import React from "react";
 
-
-export default function About({projects, certificates}) {
+function About({projects, certificates}) {
 
     return(
-       <section id='About' className='about_section'>
+       <section id='About'>
            <div className="container">
                <h2 data-aos="zoom-in-up" className='title'> <span>About me</span> </h2>
                <p data-aos="zoom-in-up"  className='subtitle'>Transforming ideas into digital experiences</p>
@@ -11,21 +11,21 @@ export default function About({projects, certificates}) {
                     <div>
                         <h2 data-aos="fade-right"><span>Hello, I'm</span> <br />
                             Mykhailo
-                            Melorenz
+                            Voronov
                         </h2>
                         <p data-aos="fade-right" className='subtitle'>
                             A self-taught Front-End developer with a strong passion for creating engaging and user-friendly digital experiences. Deeply interested in Front-End technologies, I constantly explore new tools and trends to improve my skills. I always aim to deliver high-quality and effective solutions in every project I work on.
                         </p>
                         <div data-aos="fade-up" className='about_buttons'>
-                            <button>Download CV</button>
-                            <button>View Projects</button>
+                            <a>Download CV</a>
+                            <a href='#showcase'>View Projects</a>
                         </div>
 
                     </div>
                     <div data-aos="fade-left">
                         <div  className='my_ava'>
                             <img
-                                src="https://media.discordapp.net/attachments/1080527252627914815/1387793519787376700/IMG_4481.jpg?ex=685ea2ef&is=685d516f&hm=7111ec2481d85b1af0076a871639afc896f1beefe55d2a5260efb1f1d481c255&=&format=webp&width=720&height=960"
+                                src="https://media.discordapp.net/attachments/819545736286568508/1388506484085887123/myAva.png?ex=68613aef&is=685fe96f&hm=10377abe28813d7a7c981f14bf219c4bed6c83dcc84eafb7fd8136272bd69b23&=&format=webp&quality=lossless&width=707&height=707"
                                 alt=""/>
                             <div className="pulse-ring"></div>
                         </div>
@@ -47,6 +47,7 @@ export default function About({projects, certificates}) {
                             <span data-aos="fade-left" className='count'>{projects.length}</span>
                         </div>
                         <div className='info'>
+
                             <p data-aos="fade-up" className='column_title'>TOTAL PROJECTS</p>
                             <div className='description'>
                             <p data-aos="fade-up">Lorem ipsum dolor sit amet.</p>
@@ -117,3 +118,4 @@ export default function About({projects, certificates}) {
        </section>
     )
 }
+export default React.memo(About);

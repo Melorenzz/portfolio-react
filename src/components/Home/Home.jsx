@@ -2,9 +2,9 @@ import {useEffect, useRef} from "react";
 import {TypeAnimation} from "react-type-animation";
 import lottie from "lottie-web";
 
-export default function Home() {
+function Home() {
     const lottieRef = useRef(null);
-
+    console.log("Home render");
     useEffect(() => {
         const anim = lottie.loadAnimation({
             container: lottieRef.current,
@@ -44,8 +44,8 @@ export default function Home() {
                         <div className="tag">Tailwind</div>
                     </div>
                     <div data-aos-delay="1000" data-aos="fade-up" className="buttons">
-                        <button>Projects</button>
-                        <button>Contact</button>
+                        <a href='#showcase'>Projects</a>
+                        <a href='#'>Contact</a>
                     </div>
                     <div data-aos-delay="1100" data-aos="fade-up" className="socials">
                         <div className="block"></div>
@@ -65,3 +65,4 @@ export default function Home() {
         </section>
     );
 }
+export default Home;
