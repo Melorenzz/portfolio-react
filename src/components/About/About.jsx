@@ -25,7 +25,7 @@ function About({projects, certificates}) {
                     <div data-aos="fade-left">
                         <div  className='my_ava'>
                             <img
-                                src="https://media.discordapp.net/attachments/819545736286568508/1388506484085887123/myAva.png?ex=68613aef&is=685fe96f&hm=10377abe28813d7a7c981f14bf219c4bed6c83dcc84eafb7fd8136272bd69b23&=&format=webp&quality=lossless&width=707&height=707"
+                                src="/images/myAva.png"
                                 alt=""/>
                             <div className="pulse-ring"></div>
                         </div>
