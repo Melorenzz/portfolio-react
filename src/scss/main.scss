@@ -48,34 +48,53 @@ h2 {
   }
 }
 body {
-  background: linear-gradient(-45deg, #000000, #1a0033, #00103a, #000033, #000000);
+  background: linear-gradient(
+                  -45deg,
+                  #0a001a,    /* очень тёмный синий */
+                  #1e0040,    /* фиолетовый оттенок */
+                  #002c42,    /* холодный синий */
+                  #140033,    /* тёмно-фиолетовый */
+                  #002051,    /* глубокий синий */
+                  #000033,    /* почти чёрный с синевой */
+                  #0a001a
+  );
 
-  background-blend-mode: screen;
-  background-size: 300% 300%;
-  animation: stripeFlow 15s ease-in-out infinite;
+  background-size: 400% 400%;
   background-attachment: fixed;
+  animation: stripeFlow 15s ease-in-out infinite;
+  background-repeat: no-repeat;
 }
-
 
 @keyframes stripeFlow {
   0% {
-    background-position: 0% 0%;
+    background-position: 0% 50%;
   }
   25% {
-    background-position: 50% 20%;
+    background-position: 50% 75%;
   }
   50% {
-    background-position: 100% 100%;
+    background-position: 100% 50%;
   }
   75% {
-    background-position: 40% 80%;
+    background-position: 50% 25%;
   }
   100% {
-    background-position: 0% 0%;
+    background-position: 0% 50%;
   }
 }
 
 *{
   color: #9ca3af;
   font-family: "Poppins", sans-serif;
+}
+
+@media(max-width: 600px) {
+  h2 {
+    font-size: 50px;
+    line-height: 4rem;
+  }
+  .subtitle{
+    font-size: 22px;
+    line-height: 2.2rem;
+  }
 }

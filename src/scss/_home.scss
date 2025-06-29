@@ -138,3 +138,13 @@ h1{
     flex-direction: column;
   }
 }
+@media(max-width: 600px){
+  .home_main{
+    .left{
+      .tags{
+        display: none;
+      }
+    }
+  }
+
+}

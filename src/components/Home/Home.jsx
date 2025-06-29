@@ -57,7 +57,7 @@ function Home() {
                 {/* Lottie контейнер */}
                 <div data-aos-delay="600" data-aos="fade-left" className="right">
                     <div className='gif' ref={lottieRef}
-                         style={{width: "500px", height: "500px"}}>
+                         style={{maxWidth: "500px", height: "500px"}}>
 
                     </div>
                 </div>

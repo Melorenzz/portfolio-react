@@ -180,12 +180,12 @@
 .tech_stack{
   display: grid;
   gap: 40px;
+  padding: 0 20px;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-
   justify-content: center;
   .block{
     height: 190px;
-    background: #1e293b80;
+    background: rgba(30, 41, 59, 0.52);
     border-radius: 15px;
     display: flex;
     align-items: center;

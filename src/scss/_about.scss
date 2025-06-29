@@ -17,9 +17,8 @@
 }
 .my_ava {
   position: relative;
-  width: 400px;
-  height: 400px;
-
+  max-width: 400px;
+  aspect-ratio: 1/1;
 
   border-radius: 50%;
   overflow: hidden;
@@ -230,6 +229,23 @@
 
     a{
       width: 100%;
+    }
+  }
+}
+
+@media(max-width: 600px){
+  .about_container{
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+    justify-content: center;
+    gap: 100px;
+
+    .subtitle{
+      max-width: 801px;
+      text-align: justify;
+      line-height: 2rem;
+      font-size: 18px;
     }
   }
 }

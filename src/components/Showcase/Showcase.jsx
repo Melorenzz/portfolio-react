@@ -7,13 +7,13 @@ export default function Showcase({projects, certificates}) {
 
     const techStack = useMemo(() =>
         [
-            {image: '../../../public/images/icons/html-icon.svg', title: 'HTML', anim: 'right'},
-            {image: '../../../public/images/icons/css-icon.svg', title: 'CSS', anim: 'down'},
-            {image: '../../../public/images/icons/javascript-icon.svg', title: 'JavaScript', anim: 'left'},
-            {image: '../../../public/images/icons/sass-icon.svg', title: 'SCSS', anim: 'right'},
-            {image: '../../../public/images/icons/tailwind-css-icon.svg', title: 'Tailwind CSS', anim: 'down'},
-            {image: '../../../public/images/icons/react-js-icon.svg', title: 'ReactJS', anim: 'left'},
-            {image: '../../../public/images/icons/vite-icon.svg', title: 'Vite', anim: 'right'},
+            {image: '/images/icons/html-icon.svg', title: 'HTML', anim: 'right'},
+            {image: '/images/icons/css-icon.svg', title: 'CSS', anim: 'down'},
+            {image: '/images/icons/javascript-icon.svg', title: 'JavaScript', anim: 'left'},
+            {image: '/images/icons/sass-icon.svg', title: 'SCSS', anim: 'right'},
+            {image: '/images/icons/tailwind-css-icon.svg', title: 'Tailwind CSS', anim: 'down'},
+            {image: '/images/icons/react-js-icon.svg', title: 'ReactJS', anim: 'left'},
+            {image: '/images/icons/vite-icon.svg', title: 'Vite', anim: 'right'},
         ]
     , [])
 
@@ -33,17 +33,17 @@ export default function Showcase({projects, certificates}) {
                     <div className='selector'>
                         <button onClick={() => setSelectedCategory('Projects')}
                                 className={selectedCategory === 'Projects' ? 'item_active' : 'item'}>
-                            <img src="../../../public/images/icons/projects.svg" alt=""/>
+                            <img src="/images/icons/projects.svg" alt=""/>
                             Projects
                         </button>
                         <button onClick={() => setSelectedCategory('Certificates')}
                                 className={selectedCategory === 'Certificates' ? 'item_active' : 'item'}>
-                            <img src="../../../public/images/icons/certificates.svg" alt=""/>
+                            <img src="/images/icons/certificates.svg" alt=""/>
                             Certificates
                         </button>
                         <button onClick={() => setSelectedCategory('Tech Stack')}
                                 className={selectedCategory === 'Tech Stack' ? 'item_active' : 'item'}>
-                            <img src="../../../public/images/icons/tech-stack.svg" alt=""/>
+                            <img src="/images/icons/tech-stack.svg" alt=""/>
                             Tech Stack
                         </button>
                     </div>
