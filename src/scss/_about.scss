@@ -1,6 +1,5 @@
 
 
-
 .about_container{
   display: flex;
   align-items: center;
@@ -213,6 +212,8 @@
 }
 
 @media(max-width: 1010px){
+
+
   .about_container{
     flex-wrap: wrap-reverse;
     text-align: center;
@@ -234,6 +235,7 @@
 }
 
 @media(max-width: 600px){
+
   .about_container{
     display: flex;
     align-items: center;
@@ -248,4 +250,8 @@
       font-size: 18px;
     }
   }
+  .about{
+    margin-top: -20px;
+  }
+
 }

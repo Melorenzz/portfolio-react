@@ -3,7 +3,7 @@ import React from "react";
 function About({projects, certificates}) {
 
     return(
-       <section id='About'>
+       <section className='about' id='About'>
            <div className="container">
                <h2 data-aos="zoom-in-up" className='title'> <span>About me</span> </h2>
                <p data-aos="zoom-in-up"  className='subtitle'>Transforming ideas into digital experiences</p>
