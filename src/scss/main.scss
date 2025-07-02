@@ -21,7 +21,6 @@ section{
 }
 .subtitle{
 
-  width: fit-content;
   font-size: 22px;
   margin-top: 10px;
   font-weight: 500;
@@ -88,13 +87,36 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+
+
 @media(max-width: 600px) {
+  h1{
+    font-size: 60px;
+  }
   h2 {
     font-size: 50px;
     line-height: 4rem;
   }
   .subtitle{
-    font-size: 22px;
+    font-size: 20px;
     line-height: 2.2rem;
+  }
+
+}
+
+@media(max-width: 470px){
+  h1{
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 30px;
+    line-height: 2.5rem;
+  }
+  .subtitle{
+    font-size: 16px;
+    line-height: 1.7rem;
+  }
+  section{
+    margin-top: 50px;
   }
 }

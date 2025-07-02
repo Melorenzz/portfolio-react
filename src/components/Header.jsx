@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
-
+    const [isOpenBurger, setIsOpenBurger] = useState(false);
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY;
@@ -27,6 +27,20 @@ export default function Header() {
                         <li><a href="#showcase">Portfolio</a></li>
                         <li><a href="#Contact">Contact</a></li>
                     </ul>
+                    <button onClick={() => setIsOpenBurger(!isOpenBurger)} className={isOpenBurger ? 'burger' + ' ' + 'burger_active' : 'burger'}>
+                        <div className='line'></div>
+                        <div className='line'></div>
+                        <div className='line'></div>
+                    </button>
+                    {isOpenBurger && (
+                        <ul className='header_nav_mobile'>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#About">About</a></li>
+                            <li><a href="#showcase">Portfolio</a></li>
+                            <li><a href="#Contact">Contact</a></li>
+                        </ul>
+                    )}
+
                 </nav>
             </div>
         </header>

@@ -1,6 +1,8 @@
 import {useState, useMemo} from 'react'
-import Modal from './Modal'
+import Modal from './Modal.jsx'
+import { useLocation } from "react-router-dom";
 export default function Showcase({projects, certificates}) {
+    const location = useLocation();
     const [selectedCategory, setSelectedCategory] = useState('Projects')
     const [isOpenModal, setIsOpenModal] = useState(false)
     const [modalImage, setModalImage] = useState(null)
@@ -21,6 +23,8 @@ export default function Showcase({projects, certificates}) {
         setIsOpenModal(true)
         setModalImage(image)
     }
+
+
 
     return (
 
@@ -49,6 +53,11 @@ export default function Showcase({projects, certificates}) {
                     </div>
                     {selectedCategory === 'Projects' && (
                         <div className='projects'>
+                            {location.pathname === '/admin' && (
+                                <button data-aos="fade-down" className="block add_new">
+                                    <img src="/images/icons/plus.svg" alt="plus"/>
+                                </button>
+                            )}
                             {projects.map((project, index) => (
                                 <div data-aos={`fade-${project.anim}`} key={index} className="block">
                                     <div>
@@ -67,6 +76,11 @@ export default function Showcase({projects, certificates}) {
                     )}
                     {selectedCategory === 'Certificates' && (
                         <div className='certificates'>
+                            {location.pathname === '/admin' && (
+                                <button data-aos="fade-down" className="block add_new">
+                                    <img src="/images/icons/plus.svg" alt="plus"/>
+                                </button>
+                            )}
                             {certificates.map((certificate, index) => (
                             <button data-aos={`fade-${certificate.anim}`} onClick={() => openModal(certificate.image)} key={index} className="block">
                                 <div className='open'>
@@ -79,6 +93,11 @@ export default function Showcase({projects, certificates}) {
                     )}
                     {selectedCategory === 'Tech Stack' && (
                         <div  className='tech_stack'>
+                            {location.pathname === '/admin' && (
+                                <button data-aos="fade-down" className="block add_new">
+                                    <img src="/images/icons/plus.svg" alt="plus"/>
+                                </button>
+                            )}
                             {techStack.map((techStack, index) => (
                             <div data-aos={`fade-${techStack.anim}`} key={index} className="block">
                                 <img src={techStack.image} alt=""/>
