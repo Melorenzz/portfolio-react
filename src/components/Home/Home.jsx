@@ -6,12 +6,12 @@ import Showcase from "../Showcase/Showcase.jsx";
 
 function Home() {
     const projects = [
-        {image: null, title: 'Project title', description: 'Project description', anim: 'right'},
+        {image: 'https://misha.swit.vn.ua/less41-42/Screenshot_4.png', title: 'Less41-42', description: '3d model on the site', anim: 'right', url: 'https://misha.swit.vn.ua/less41-42/index.html', download: 'https://misha.swit.vn.ua/less41-42/less41-42.zip'},
         {image: null, title: 'Project title', description: 'Project description', anim: 'down'},
         {image: null, title: 'Project title', description: 'Project description', anim: 'left'},
-        {image: null, title: 'Project title', description: 'Project description', anim: 'right'},
-        {image: null, title: 'Project title', description: 'Project description', anim: 'down'},
-        {image: null, title: 'Project title', description: 'Project description', anim: 'left'},
+        // {image: null, title: 'Project title', description: 'Project description', anim: 'right'},
+        // {image: null, title: 'Project title', description: 'Project description', anim: 'down'},
+        // {image: null, title: 'Project title', description: 'Project description', anim: 'left'},
     ]
     const certificates = [
         {

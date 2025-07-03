@@ -66,8 +66,8 @@ export default function Showcase({projects, certificates}) {
                                         <p className='project_description'>{project.description}</p>
                                     </div>
                                     <div className='buttons'>
-                                        <a href="">Live Demo</a>
-                                        <button>Details &rarr;</button>
+                                        <a target='_blank' href={project.url}>Live Demo</a>
+                                        <a className='download' href={project.download}>Download &rarr;</a>
                                     </div>
                             </div>
                             ))}
