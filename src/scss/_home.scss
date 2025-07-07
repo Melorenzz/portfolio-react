@@ -119,12 +119,17 @@ h1 {
         box-shadow: 0 0 20px 5px rgba(78, 0, 165, 0.3);
         width: 40px;
         height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-radius: 10px;
         background: #00000080;
         border: 1px solid rgba(255, 255, 255, 0.15);
-        padding: 10px;
         transition: all .3s;
-
+        img{
+          width: 20px;
+        }
         &:hover {
           box-shadow: 0 0 20px 5px rgba(78, 0, 165, 0.9);
 

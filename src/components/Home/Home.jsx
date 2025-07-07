@@ -119,12 +119,20 @@ function Home() {
                         </div>
                         <nav data-aos-delay="1000" data-aos="fade-up" className="buttons">
                             <a href='#showcase'>Projects</a>
-                            <a href='#'>Contact</a>
+                            <a href='#contact'>Contact</a>
                         </nav>
                         <div data-aos-delay="1100" data-aos="fade-up" className="socials">
-                            <div className="block"></div>
-                            <div className="block"></div>
-                            <div className="block"></div>
+                            <a href='https://github.com/Melorenzz' className="block">
+                                <img src="/images/icons/github.svg" alt=""/>
+                            </a>
+                            <a href='https://www.linkedin.com/in/mykhailo-voronov-3630a7356/' className="block">
+                                <img src="/images/icons/linkedin.svg" alt=""/>
+
+                            </a>
+                            <a href='https://www.instagram.com/melorenz_/' className="block">
+                                <img src="/images/icons/instagram.svg" alt=""/>
+
+                            </a>
                         </div>
                     </div>
 

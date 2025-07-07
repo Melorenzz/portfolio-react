@@ -6,7 +6,8 @@
 @use '_footer';
 @use '_showcase';
 @use '_modal';
-@use '_connect';
+@use 'connect/connect';
+@use 'connect/comments';
 html {
   scroll-behavior: smooth;
 }
@@ -88,7 +89,21 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+input, textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.21);
+  padding: 16px;
+  border-radius: 1rem;
+  resize: none;
+  width: 100%;
+  font-size: 16px;
+  color: white;
 
+  &::placeholder {
+    color: rgb(155, 163, 174);
+    font-size: 16px;
+  }
+}
 
 @media(max-width: 600px) {
   h1{

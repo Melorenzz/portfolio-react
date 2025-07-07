@@ -25,7 +25,7 @@ export default function Header() {
                         <li><a href="#">Home</a></li>
                         <li><a href="#About">About</a></li>
                         <li><a href="#showcase">Portfolio</a></li>
-                        <li><a href="#Contact">Contact</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                     <button onClick={() => setIsOpenBurger(!isOpenBurger)} className={isOpenBurger ? 'burger' + ' ' + 'burger_active' : 'burger'}>
                         <div className='line'></div>
@@ -37,7 +37,7 @@ export default function Header() {
                             <li><a href="#">Home</a></li>
                             <li><a href="#About">About</a></li>
                             <li><a href="#showcase">Portfolio</a></li>
-                            <li><a href="#Contact">Contact</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     )}
 
