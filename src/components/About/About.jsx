@@ -25,7 +25,7 @@ function About({projects, certificates}) {
                     <div data-aos="fade-left">
                         <div  className='my_ava'>
                             <img
-                                // src="/images/myAva.png"
+                                src="/images/myAva.png"
                                 alt=""/>
                             <div className="pulse-ring"></div>
                         </div>
