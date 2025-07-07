@@ -48,7 +48,9 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-
+  textarea {
+    height: 150px;
+  }
   label {
     color: white;
     font-size: 14px;

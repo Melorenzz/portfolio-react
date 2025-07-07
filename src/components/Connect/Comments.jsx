@@ -40,20 +40,20 @@ export default function Comments(){
     }, [])
     return(
         <div className="connect_comments">
-            <div className="comments_container">
+            <div data-aos="fade-up" className="comments_container">
                 <div className='comments_header'>
                     <div className='icon'>
                         <img src="/images/icons/comments.svg" alt=""/>
                     </div>
                     <h3>
                         Comments
-                        <span>(48)</span>
+                        <span>({messages.length})</span>
                     </h3>
                 </div>
                 <form onSubmit={e => {e.preventDefault(); postMessage(userMessage);}}
                       className='comment_form' method="POST">
-                    <label data-aos="zoom-in-up" htmlFor="name">Name</label>
-                    <input data-aos="zoom-in-up"
+                    <label data-aos="fade-up" htmlFor="name">Name</label>
+                    <input data-aos="fade-up"
                         maxLength={12}
                         onChange={(e) =>
                             setUserMessage((prev) => ({ ...prev, username: e.target.value }))
@@ -63,23 +63,23 @@ export default function Comments(){
                         placeholder="Enter your name"
                         type="text"
                     />
-                    <label data-aos="zoom-in-up" htmlFor="message">Message</label>
-                    <textarea data-aos="zoom-in-up"
+                    <label data-aos="fade-up" htmlFor="message">Message</label>
+                    <textarea data-aos="fade-up"
                         maxLength={200}
                         onChange={(e) => setUserMessage(prev => ({ ...prev, message: e.target.value }))} id='message' required placeholder='Write your message here...' type="text"/>
-                    <label data-aos="zoom-in-up" htmlFor="">Profile Photo (optional)</label>
-                    <div data-aos="zoom-in-up" className='file_selector'>
-                        <button data-aos="zoom-in-up">
+                    <label data-aos="fade-up" htmlFor="">Profile Photo (optional)</label>
+                    <div data-aos="fade-up" className='file_selector'>
+                        <button data-aos="fade-up">
                             Choose profile photo
                             <input type="file"/>
                         </button>
-                        <p data-aos="zoom-in-up" className='file_size'>Max file size: MB</p>
+                        <p className='file_size'>Max file size: MB</p>
                     </div>
-                    <button data-aos="zoom-in-up" type='submit' className='submit'>Post Comment</button>
+                    <button data-aos="fade-up" type='submit' className='submit'>Post Comment</button>
                 </form>
-                <div data-aos="zoom-in-up" className='comments'>
+                <div data-aos="fade-up" className='comments'>
                     {messages.map((message) => (
-                        <div  key={message.id} className="comment">
+                        <div key={message.id} className="comment">
                             {message.ava ? (<img src={message.ava} alt="ava"/>) : (
                                 <div className='without_ava'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
