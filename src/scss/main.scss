@@ -98,7 +98,9 @@ input, textarea {
   width: 100%;
   font-size: 16px;
   color: white;
-
+  &:focus{
+    border: 1px solid rgb(99, 102, 241);
+  }
   &::placeholder {
     color: rgb(155, 163, 174);
     font-size: 16px;

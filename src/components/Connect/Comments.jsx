@@ -47,7 +47,7 @@ export default function Comments(){
                     </div>
                     <h3>
                         Comments
-                        <span>({messages.length})</span>
+                        <span>({messages.length + 1})</span>
                     </h3>
                 </div>
                 <form onSubmit={e => {e.preventDefault(); postMessage(userMessage);}}
@@ -78,9 +78,22 @@ export default function Comments(){
                     <button data-aos="fade-up" type='submit' className='submit'>Post Comment</button>
                 </form>
                 <div data-aos="fade-up" className='comments'>
+                    <div className="comment pinned">
+                        <div className='pinned_icon'>
+                            <img src="/images/icons/pinned.svg" alt="pinned"/>
+                            <span>Pinned Comment</span>
+                        </div>
+                        <div className='content'>
+                            <img className='ava' src='/images/myAva.png' alt="ava"/>
+                            <div className='comment_content'>
+                                <h4>Melorenz</h4>
+                                <p>Thanks for visiting! Contact me if you need anything</p>
+                            </div>
+                        </div>
+                    </div>
                     {messages.map((message) => (
                         <div key={message.id} className="comment">
-                            {message.ava ? (<img src={message.ava} alt="ava"/>) : (
+                            {message.ava ? (<img className='ava' src={message.ava} alt="ava"/>) : (
                                 <div className='without_ava'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                          fill="none" stroke="rgb(124, 141, 241)" stroke-width="2" stroke-linecap="round"
