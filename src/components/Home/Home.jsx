@@ -3,6 +3,7 @@ import {TypeAnimation} from "react-type-animation";
 import lottie from "lottie-web";
 import About from "../About/About.jsx";
 import Showcase from "../Showcase/Showcase.jsx";
+import Connect from '../../components/Connect/Connect'
 
 function Home() {
     const projects = [
@@ -116,10 +117,10 @@ function Home() {
                             <div className="tag">SCSS</div>
                             <div className="tag">Tailwind</div>
                         </div>
-                        <div data-aos-delay="1000" data-aos="fade-up" className="buttons">
+                        <nav data-aos-delay="1000" data-aos="fade-up" className="buttons">
                             <a href='#showcase'>Projects</a>
                             <a href='#'>Contact</a>
-                        </div>
+                        </nav>
                         <div data-aos-delay="1100" data-aos="fade-up" className="socials">
                             <div className="block"></div>
                             <div className="block"></div>
@@ -138,6 +139,7 @@ function Home() {
             </section>
             <About projects={projects} certificates={certificates}/>
             <Showcase projects={projects} certificates={certificates}/>
+            <Connect />
         </>
     );
 }
