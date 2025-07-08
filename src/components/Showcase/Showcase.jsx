@@ -37,17 +37,17 @@ export default function Showcase({projects, certificates}) {
                     <div className='selector'>
                         <button onClick={() => setSelectedCategory('Projects')}
                                 className={selectedCategory === 'Projects' ? 'item_active' : 'item'}>
-                            <img src="/images/icons/projects.svg" alt=""/>
+                            <img loading='lazy' src="/images/icons/projects.svg" alt=""/>
                             Projects
                         </button>
                         <button onClick={() => setSelectedCategory('Certificates')}
                                 className={selectedCategory === 'Certificates' ? 'item_active' : 'item'}>
-                            <img src="/images/icons/certificates.svg" alt=""/>
+                            <img loading='lazy' src="/images/icons/certificates.svg" alt=""/>
                             Certificates
                         </button>
                         <button onClick={() => setSelectedCategory('Tech Stack')}
                                 className={selectedCategory === 'Tech Stack' ? 'item_active' : 'item'}>
-                            <img src="/images/icons/tech-stack.svg" alt=""/>
+                            <img loading='lazy' src="/images/icons/tech-stack.svg" alt=""/>
                             Tech Stack
                         </button>
                     </div>
@@ -55,13 +55,13 @@ export default function Showcase({projects, certificates}) {
                         <div className='projects'>
                             {location.pathname === '/admin' && (
                                 <button data-aos="fade-down" className="block add_new">
-                                    <img src="/images/icons/plus.svg" alt="plus"/>
+                                    <img loading='lazy' src="/images/icons/plus.svg" alt="plus"/>
                                 </button>
                             )}
                             {projects.map((project, index) => (
                                 <div data-aos={`fade-${project.anim}`} key={index} className="block">
                                     <div>
-                                        <img className='project_thumbnail' src={project.image} alt=""/>
+                                        <img loading='lazy' className='project_thumbnail' src={project.image} alt=""/>
                                         <h3 className='project_name'>{project.title}</h3>
                                         <p className='project_description'>{project.description}</p>
                                     </div>
@@ -78,7 +78,7 @@ export default function Showcase({projects, certificates}) {
                         <div className='certificates'>
                             {location.pathname === '/admin' && (
                                 <button data-aos="fade-down" className="block add_new">
-                                    <img src="/images/icons/plus.svg" alt="plus"/>
+                                    <img loading='lazy' src="/images/icons/plus.svg" alt="plus"/>
                                 </button>
                             )}
                             {certificates.map((certificate, index) => (
@@ -86,7 +86,7 @@ export default function Showcase({projects, certificates}) {
                                 <div className='open'>
                                     open
                                 </div>
-                                <img className='certificate_image' src={certificate.image} alt=""/>
+                                <img loading='lazy' className='certificate_image' src={certificate.image} alt=""/>
                             </button>
                             ))}
                         </div>
@@ -95,12 +95,12 @@ export default function Showcase({projects, certificates}) {
                         <div  className='tech_stack'>
                             {location.pathname === '/admin' && (
                                 <button data-aos="fade-down" className="block add_new">
-                                    <img src="/images/icons/plus.svg" alt="plus"/>
+                                    <img loading='lazy' src="/images/icons/plus.svg" alt="plus"/>
                                 </button>
                             )}
                             {techStack.map((techStack, index) => (
                             <div data-aos={`fade-${techStack.anim}`} key={index} className="block">
-                                <img src={techStack.image} alt=""/>
+                                <img loading='lazy' src={techStack.image} alt=""/>
                                 <span>{techStack.title}</span>
                             </div>
                             ))}

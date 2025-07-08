@@ -4,7 +4,7 @@ export default function Modal({isOpenModal, setIsOpenModal, image}){
         <div className='modal' onClick={() => setIsOpenModal(false)}>
             <div onClick={(e) => e.stopPropagation()} className='content'>
                 <button onClick={() => setIsOpenModal(false)} className='close'>close</button>
-                <img src={image} alt="certificate" />
+                <img loading='lazy' src={image} alt="certificate" />
             </div>
         </div>
 

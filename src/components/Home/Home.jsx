@@ -1,83 +1,82 @@
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import {TypeAnimation} from "react-type-animation";
 import lottie from "lottie-web";
 import About from "../About/About.jsx";
 import Showcase from "../Showcase/Showcase.jsx";
 import Connect from '../../components/Connect/Connect'
+import axios from "axios";
+
 
 function Home() {
-    const projects = [
-        {image: 'https://misha.swit.vn.ua/less41-42/Screenshot_4.png', title: 'Less41-42', description: '3d model on the site', anim: 'right', url: 'https://misha.swit.vn.ua/less41-42/index.html', download: 'https://misha.swit.vn.ua/less41-42/less41-42.zip'},
-        {image: null, title: 'Project title', description: 'Project description', anim: 'down'},
-        {image: null, title: 'Project title', description: 'Project description', anim: 'left'},
-        // {image: null, title: 'Project title', description: 'Project description', anim: 'right'},
-        // {image: null, title: 'Project title', description: 'Project description', anim: 'down'},
-        // {image: null, title: 'Project title', description: 'Project description', anim: 'left'},
-    ]
-    const certificates = [
-        {
-            image: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-            title: 'Certificate title',
-            link: '',
-            anim: 'right'
-        },
-        {
-            image: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-            title: 'Certificate title',
-            link: '',
-            anim: 'down'
-        },
-        {
-            image: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-            title: 'Certificate title',
-            link: '',
-            anim: 'left'
-        },
-        {
-            image: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-            title: 'Certificate title',
-            link: '',
-            anim: 'right'
-        },
-        {
-            image: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-            title: 'Certificate title',
-            link: '',
-            anim: 'down'
-        },
-        {
-            image: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-            title: 'Certificate title',
-            link: '',
-            anim: 'left'
-        },
-        {
-            image: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-            title: 'Certificate title',
-            link: '',
-            anim: 'right'
-        },
-        {
-            image: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-            title: 'Certificate title',
-            link: '',
-            anim: 'down'
-        },
-        {
-            image: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-            title: 'Certificate title',
-            link: '',
-            anim: 'left'
-        },
-        {
-            image: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-            title: 'Certificate title',
-            link: '',
-            anim: 'right'
-        },
-    ]
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+    const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
+
+    const [projects, setProjects] = useState([]);
+    const [certificates, setCertificates] = useState([]);
+
+    async function getProjects(){
+        const res = await axios.get(`${supabaseUrl}/rest/v1/projects`, {
+            headers: {
+                'Content-Type': 'application/json',
+                apikey: supabaseKey,
+                Authorization: `Bearer ${supabaseKey}`,
+                Prefer: 'return=representation',
+            }
+        })
+
+        setProjects(res.data);
+    }
+    useEffect(() => {
+        getProjects();
+    }, [])
+
+    async function getCertificates(){
+        const res = await axios.get(`${supabaseUrl}/rest/v1/certificates`, {
+            headers: {
+                'Content-Type': 'application/json',
+                apikey: supabaseKey,
+                Authorization: `Bearer ${supabaseKey}`,
+                Prefer: 'return=representation',
+            }
+        })
+        console.log('cert');
+        console.log(res.data);
+        setCertificates(res.data);
+    }
+    useEffect(() => {
+        getCertificates();
+    }, [])
+
+    // const projects = [
+    //     {image: 'https://misha.swit.vn.ua/less41-42/Screenshot_4.png', title: 'Less41-42', description: '3d model on the site', anim: 'right', url: 'https://misha.swit.vn.ua/less41-42/index.html', download: 'https://misha.swit.vn.ua/less41-42/less41-42.zip'},
+    //     {image: null, title: 'Project title', description: 'Project description', anim: 'down'},
+    //     {image: null, title: 'Project title', description: 'Project description', anim: 'left'},
+    //     // {image: null, title: 'Project title', description: 'Project description', anim: 'right'},
+    //     // {image: null, title: 'Project title', description: 'Project description', anim: 'down'},
+    //     // {image: null, title: 'Project title', description: 'Project description', anim: 'left'},
+    // ]
+
+    // const certificates = [
+    //     {
+    //         image: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
+    //         title: 'Certificate title',
+    //         link: '',
+    //         anim: 'right'
+    //     },
+    //     {
+    //         image: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
+    //         title: 'Certificate title',
+    //         link: '',
+    //         anim: 'down'
+    //     },
+    //     {
+    //         image: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
+    //         title: 'Certificate title',
+    //         link: '',
+    //         anim: 'left'
+    //     }
+    // ]
     const lottieRef = useRef(null);
-    console.log("Home render");
     useEffect(() => {
         const anim = lottie.loadAnimation({
             container: lottieRef.current,
@@ -123,14 +122,14 @@ function Home() {
                         </nav>
                         <div data-aos-delay="1100" data-aos="fade-up" className="socials">
                             <a href='https://github.com/Melorenzz' className="block">
-                                <img src="/images/icons/github.svg" alt=""/>
+                                <img loading='lazy' src="/images/icons/github.svg" alt=""/>
                             </a>
                             <a href='https://www.linkedin.com/in/mykhailo-voronov-3630a7356/' className="block">
-                                <img src="/images/icons/linkedin.svg" alt=""/>
+                                <img loading='lazy' src="/images/icons/linkedin.svg" alt=""/>
 
                             </a>
                             <a href='https://www.instagram.com/melorenz_/' className="block">
-                                <img src="/images/icons/instagram.svg" alt=""/>
+                                <img loading='lazy' src="/images/icons/instagram.svg" alt=""/>
 
                             </a>
                         </div>
