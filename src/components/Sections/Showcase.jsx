@@ -1,6 +1,9 @@
 import {useState, useMemo} from 'react'
-import Modal from './Modal.jsx'
+import Modal from '../UI/Modal.jsx'
 import { useLocation } from "react-router-dom";
+import Projects from "../UI/Projects.jsx";
+import Certificates from "../UI/Certificates.jsx";
+import TechStack from "../UI/TechStack.jsx";
 export default function Showcase({projects, certificates}) {
     const location = useLocation();
     const [selectedCategory, setSelectedCategory] = useState('Projects')
@@ -52,59 +55,14 @@ export default function Showcase({projects, certificates}) {
                         </button>
                     </div>
                     {selectedCategory === 'Projects' && (
-                        <div className='projects'>
-                            {location.pathname === '/admin' && (
-                                <button data-aos="fade-down" className="block add_new">
-                                    <img loading='lazy' src="/images/icons/plus.svg" alt="plus"/>
-                                </button>
-                            )}
-                            {projects.map((project, index) => (
-                                <div data-aos={`fade-${project.anim}`} key={index} className="block">
-                                    <div>
-                                        <img loading='lazy' className='project_thumbnail' src={project.image} alt=""/>
-                                        <h3 className='project_name'>{project.title}</h3>
-                                        <p className='project_description'>{project.description}</p>
-                                    </div>
-                                    <div className='buttons'>
-                                        <a target='_blank' href={project.url}>Live Demo</a>
-                                        <a className='download' href={project.download}>Download &rarr;</a>
-                                    </div>
-                            </div>
-                            ))}
-                        </div>
+                        <Projects projects={projects} />
 
                     )}
                     {selectedCategory === 'Certificates' && (
-                        <div className='certificates'>
-                            {location.pathname === '/admin' && (
-                                <button data-aos="fade-down" className="block add_new">
-                                    <img loading='lazy' src="/images/icons/plus.svg" alt="plus"/>
-                                </button>
-                            )}
-                            {certificates.map((certificate, index) => (
-                            <button data-aos={`fade-${certificate.anim}`} onClick={() => openModal(certificate.image)} key={index} className="block">
-                                <div className='open'>
-                                    open
-                                </div>
-                                <img loading='lazy' className='certificate_image' src={certificate.image} alt=""/>
-                            </button>
-                            ))}
-                        </div>
+                        <Certificates certificates={certificates} />
                     )}
                     {selectedCategory === 'Tech Stack' && (
-                        <div  className='tech_stack'>
-                            {location.pathname === '/admin' && (
-                                <button data-aos="fade-down" className="block add_new">
-                                    <img loading='lazy' src="/images/icons/plus.svg" alt="plus"/>
-                                </button>
-                            )}
-                            {techStack.map((techStack, index) => (
-                            <div data-aos={`fade-${techStack.anim}`} key={index} className="block">
-                                <img loading='lazy' src={techStack.image} alt=""/>
-                                <span>{techStack.title}</span>
-                            </div>
-                            ))}
-                        </div>
+                        <TechStack techStack={techStack} />
                     )}
                 </div>
             </div>

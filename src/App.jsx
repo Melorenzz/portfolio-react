@@ -1,6 +1,6 @@
-import Header from './components/Header'
-import Home from './components/Home/Home'
-import Footer from './components/Footer/Footer'
+import Header from './components/Layout/Header.jsx'
+import Home from './components/Sections/Home.jsx'
+import Footer from './components/Layout/Footer.jsx'
 import {useEffect} from "react";
 import AOS from 'aos';
 import {BrowserRouter, Routes, Route} from "react-router-dom";

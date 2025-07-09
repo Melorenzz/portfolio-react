@@ -1,4 +1,7 @@
-import Comments from "./Comments";
+import Comments from "./Comments.jsx";
+import ButtonForm from "../../UI/ButtonForm.jsx";
+import InputForm from "../../UI/InputForm.jsx";
+import TextareaForm from "../../UI/TextareaForm.jsx";
 
 export default function Connect(){
 
@@ -12,11 +15,11 @@ export default function Connect(){
                         <h2 data-aos="fade-up" className='title'><span>Contact</span></h2>
                         <p data-aos="fade-up" className='subtitle'>WILL BE ADDED IN FUTURE UPDATES</p>
                         <form>
-                            <input data-aos="fade-up" placeholder='Name' type="text"/>
-                            <input data-aos="fade-up" placeholder='Email' type="text"/>
-                            <textarea data-aos="fade-up" placeholder='Message' name="" id="" cols="30" rows="10">
-                            </textarea>
-                            <button data-aos="fade-up" className='submit'>Send</button>
+                            <InputForm placeholder='Name' maxLength='12'></InputForm>
+                            <InputForm placeholder='Email'></InputForm>
+                            <TextareaForm placeholder='Message' />
+                            <ButtonForm>Send</ButtonForm>
+                            {/*<button data-aos="fade-up" className='submit'>Send</button>*/}
                         </form>
                     </div>
                     <Comments />
