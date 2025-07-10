@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import axios from "axios";
 import ButtonForm from "../../UI/ButtonForm.jsx";
 import Comment from "../../UI/Comment.jsx";
 import InputForm from "../../UI/InputForm.jsx";
@@ -12,6 +11,16 @@ export default function Comments(){
     const [comments, setComments] = useState([]);
 
     const [isDisabledPost, setIsDisabledPost] = useState(false);
+    useEffect(() => {
+        const lastPost = localStorage.getItem('lastCommentTime');
+        if (lastPost) {
+            const remaining = 30000 - (Date.now() - parseInt(lastPost));
+            if (remaining > 0) {
+                setIsDisabledPost(true);
+                setTimeout(() => setIsDisabledPost(false), remaining);
+            }
+        }
+    }, []);
 
     // async function postMessage(userMessage){
     //     const res = await axios.post(`${supabaseUrl}/rest/v1/comments`, userMessage, {
@@ -51,16 +60,19 @@ export default function Comments(){
     }, [])
     async function postComment() {
         try {
+            const now = Date.now();
+
             await postMessage(userComment);
-            fetchComments()
-            setIsDisabledPost(true)
-            setTimeout(() => {
-                setIsDisabledPost(false)
-            }, 30000)
+            fetchComments();
+            setIsDisabledPost(true);
+
+            localStorage.setItem('lastCommentTime', now.toString());
+
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
+
     return(
         <div className="connect_comments">
             <div data-aos="fade-up" className="comments_container">
