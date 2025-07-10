@@ -1,5 +1,5 @@
-export default function ButtonForm({children}){
+export default function ButtonForm({children, disabled}){
     return(
-        <button data-aos="fade-up" type='submit' className='submit'>{children}</button>
+        <button disabled={disabled} data-aos="fade-up" type='submit' className={'submit'}>{disabled ? 'wait 30 seconds' : children}</button>
     )
 }

@@ -5,34 +5,31 @@ import About from "./About.jsx";
 import Showcase from "./Showcase.jsx";
 import Connect from './Connect/Connect.jsx'
 import axios from "axios";
-import { getProjects } from "../../api.js";
-import { getCertificates } from "../../api.js";
+import {getProjects} from "../../api.js";
+import {getCertificates} from "../../api.js";
 
 function Home() {
 
+    const tags = ['React', "JavaScript", "SCSS", "Tailwind"]
 
     const [projects, setProjects] = useState([]);
     const [certificates, setCertificates] = useState([]);
 
     useEffect(() => {
-        async function fetchProjects() {
+        async function fetchData() {
             try {
-                const data = await getProjects();
-                setProjects(data);
+                const [dataProjects, dataCertificates] = await Promise.all([
+                    getProjects(),
+                    getCertificates()
+                ])
+                setProjects(dataProjects);
+                setCertificates(dataCertificates);
             } catch (error) {
-                console.log('Ошибка загрузки проектов:', error);
+                console.log('Ошибка загрузки:', error);
             }
         }
-        async function fetchCertificates() {
-            try{
-                const data = await getCertificates();
-                setCertificates(data);
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        fetchCertificates()
-        fetchProjects();
+
+        fetchData();
     }, []);
 
 
@@ -71,10 +68,9 @@ function Home() {
                             Creating innovative, functional, and user-friendly websites for digital solutions.
                         </p>
                         <div data-aos-delay="900" data-aos="fade-up" className="tags">
-                            <div className="tag">React</div>
-                            <div className="tag">JavaScript</div>
-                            <div className="tag">SCSS</div>
-                            <div className="tag">Tailwind</div>
+                            {tags.map((tag, index) => (
+                                <div key={index} className='tag'>{tag}</div>
+                            ))}
                         </div>
                         <nav data-aos-delay="1000" data-aos="fade-up" className="buttons">
                             <a href='#showcase'>Projects</a>
@@ -90,7 +86,6 @@ function Home() {
                             </a>
                             <a href='https://www.instagram.com/melorenz_/' className="block">
                                 <img loading='lazy' src="/images/icons/instagram.svg" alt=""/>
-
                             </a>
                         </div>
                     </div>
@@ -106,7 +101,7 @@ function Home() {
             </section>
             <About projects={projects} certificates={certificates}/>
             <Showcase projects={projects} certificates={certificates}/>
-            <Connect />
+            <Connect/>
         </>
     );
 }

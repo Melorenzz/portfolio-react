@@ -1,15 +1,9 @@
 import {useState, useMemo} from 'react'
-import Modal from '../UI/Modal.jsx'
-import { useLocation } from "react-router-dom";
 import Projects from "../UI/Projects.jsx";
 import Certificates from "../UI/Certificates.jsx";
 import TechStack from "../UI/TechStack.jsx";
 export default function Showcase({projects, certificates}) {
-    const location = useLocation();
     const [selectedCategory, setSelectedCategory] = useState('Projects')
-    const [isOpenModal, setIsOpenModal] = useState(false)
-    const [modalImage, setModalImage] = useState(null)
-
     const techStack = useMemo(() =>
         [
             {image: '/images/icons/html-icon.svg', title: 'HTML', anim: 'right'},
@@ -21,18 +15,8 @@ export default function Showcase({projects, certificates}) {
             {image: '/images/icons/vite-icon.svg', title: 'Vite', anim: 'right'},
         ]
     , [])
-
-    function openModal(image) {
-        setIsOpenModal(true)
-        setModalImage(image)
-    }
-
-
-
     return (
-
         <section id='showcase' className="section">
-            <Modal isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} image={modalImage} />
             <div className="container">
                 <h2 data-aos="fade-up" className='title'> <span>Portfolio Showcase</span> </h2>
                 <p data-aos="fade-up" className='subtitle'>Explore my journey through projects, certifications, and technical expertise. Each <br /> section represents a milestone in my continuous learning path.</p>

@@ -2,12 +2,13 @@
 @use '_colors';
 @use '_header';
 @use '_home';
-@use '_about';
+@use 'about/about';
 @use '_footer';
 @use '_showcase';
 @use '_modal';
 @use 'connect/connect';
 @use 'connect/comments';
+@use 'about/about_card';
 html {
   scroll-behavior: smooth;
 }

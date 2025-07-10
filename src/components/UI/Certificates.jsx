@@ -1,6 +1,19 @@
+import Modal from "./Modal.jsx";
+import {useState} from "react";
+import {useLocation} from "react-router-dom";
+
 export default function Certificates({certificates}){
+    const location = useLocation();
+    const [isOpenModal, setIsOpenModal] = useState(false)
+    const [modalImage, setModalImage] = useState(null)
+
+    function openModal(image) {
+        setIsOpenModal(true)
+        setModalImage(image)
+    }
     return(
         <div className='certificates'>
+            <Modal isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} image={modalImage} />
             {location.pathname === '/admin' && (
                 <button data-aos="fade-down" className="block add_new">
                     <img loading='lazy' src="/images/icons/plus.svg" alt="plus"/>
