@@ -15,7 +15,7 @@ const axiosInstance = axios.create({
 });
 
 export async function getProjects() {
-    const res = await axiosInstance.get('/projects');
+    const res = await axiosInstance.get('/projects?order=created_at.desc');
     return res.data;
 }
 
