@@ -11,6 +11,7 @@ import {getCertificates} from "../../api.js";
 function Home() {
 
     const tags = ['React', "JavaScript", "SCSS", "Tailwind"]
+    const [loading, setLoading] = useState(true)
 
     const [projects, setProjects] = useState([]);
     const [certificates, setCertificates] = useState([]);
@@ -18,6 +19,7 @@ function Home() {
     useEffect(() => {
         async function fetchData() {
             try {
+                setLoading(true)
                 const [dataProjects, dataCertificates] = await Promise.all([
                     getProjects(),
                     getCertificates()
@@ -26,6 +28,11 @@ function Home() {
                 setCertificates(dataCertificates);
             } catch (error) {
                 console.log('Ошибка загрузки:', error);
+            }
+            finally {
+                setTimeout(() => {
+                    setLoading(false)
+                }, 2000)
             }
         }
 
@@ -100,7 +107,7 @@ function Home() {
                 </div>
             </section>
             <About projects={projects} certificates={certificates}/>
-            <Showcase projects={projects} certificates={certificates}/>
+            <Showcase loading={loading} projects={projects} certificates={certificates}/>
             <Connect/>
         </>
     );

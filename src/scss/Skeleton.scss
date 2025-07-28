@@ -1,0 +1,201 @@
+@keyframes skeleton-pulse {
+  0% {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  50% {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  100% {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.skeleton-container {
+  width: 100%;
+  padding: 0 20px;
+  
+  &.skeleton-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    gap: 20px;
+  }
+  
+  &.skeleton-certificates {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+  }
+  
+  &.skeleton-techStack {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 40px;
+    justify-content: center;
+  }
+}
+
+.skeleton-block {
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  
+  &.skeleton-project {
+    height: 475px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    .skeleton-thumbnail {
+      width: 100%;
+      height: 200px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      animation: skeleton-pulse 1.5s ease-in-out infinite;
+    }
+    
+    .skeleton-content {
+      flex: 1;
+      margin-top: 20px;
+      
+      .skeleton-title {
+        height: 28px;
+        width: 70%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        margin-bottom: 20px;
+        animation: skeleton-pulse 1.5s ease-in-out infinite;
+      }
+      
+      .skeleton-description {
+        .skeleton-line {
+          height: 16px;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 4px;
+          margin-bottom: 8px;
+          animation: skeleton-pulse 1.5s ease-in-out infinite;
+          
+          &.short {
+            width: 60%;
+          }
+        }
+      }
+    }
+    
+    .skeleton-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      
+      .skeleton-button {
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        animation: skeleton-pulse 1.5s ease-in-out infinite;
+        
+        &:first-child {
+          width: 80px;
+        }
+        
+        &.download {
+          width: 120px;
+        }
+      }
+    }
+  }
+  
+  &.skeleton-certificate {
+    padding: 20px;
+    width: 100%;
+    aspect-ratio: 1.42 / 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .skeleton-image {
+      width: 100%;
+      height: 320px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      animation: skeleton-pulse 1.5s ease-in-out infinite;
+    }
+  }
+  
+  &.skeleton-tech {
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    
+    .skeleton-icon {
+      width: 100px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: skeleton-pulse 1.5s ease-in-out infinite;
+    }
+    
+    .skeleton-text {
+      height: 20px;
+      width: 60px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      animation: skeleton-pulse 1.5s ease-in-out infinite;
+    }
+  }
+}
+
+// Адаптивность для мобильных устройств
+@media(max-width: 470px) {
+  .skeleton-container {
+    &.skeleton-projects {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      
+      .skeleton-block.skeleton-project {
+        height: 275px;
+        padding: 20px;
+        
+        .skeleton-thumbnail {
+          height: 100px;
+        }
+        
+        .skeleton-content {
+          .skeleton-title {
+            height: 22px;
+            margin-bottom: 5px;
+          }
+          
+          .skeleton-description {
+            .skeleton-line {
+              height: 14px;
+              margin-bottom: 5px;
+            }
+          }
+        }
+        
+        .skeleton-buttons {
+          .skeleton-button {
+            height: 35px;
+            
+            &:first-child {
+              width: 70px;
+            }
+            
+            &.download {
+              width: 100px;
+            }
+          }
+        }
+      }
+    }
+    
+    &.skeleton-certificates {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+} 

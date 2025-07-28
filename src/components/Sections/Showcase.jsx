@@ -2,7 +2,8 @@ import {useState, useMemo} from 'react'
 import Projects from "../UI/Projects.jsx";
 import Certificates from "../UI/Certificates.jsx";
 import TechStack from "../UI/TechStack.jsx";
-export default function Showcase({projects, certificates}) {
+import Skeleton from "../UI/Skeleton.jsx";
+export default function Showcase({projects, certificates, loading}) {
     const [selectedCategory, setSelectedCategory] = useState('Projects')
     const techStack = useMemo(() =>
         [
@@ -38,9 +39,22 @@ export default function Showcase({projects, certificates}) {
                             Tech Stack
                         </button>
                     </div>
-                    {selectedCategory === 'Projects' && (
+                    {loading ? (
+                        <>
+                        {selectedCategory === 'Projects' && (
+                            <Skeleton type="projects" count={3} />
+                        )}
+                        {selectedCategory === 'Certificates' && (
+                            <Skeleton type="certificates" count={4} />
+                        )}
+                        {selectedCategory === 'Tech Stack' && (
+                            <Skeleton type="techStack" count={7} />
+                        )}
+                        </>
+                    ) : (
+                        <>
+                        {selectedCategory === 'Projects' && (
                         <Projects projects={projects} />
-
                     )}
                     {selectedCategory === 'Certificates' && (
                         <Certificates certificates={certificates} />
@@ -48,6 +62,11 @@ export default function Showcase({projects, certificates}) {
                     {selectedCategory === 'Tech Stack' && (
                         <TechStack techStack={techStack} />
                     )}
+                        </>
+                    )}
+
+
+                    
                 </div>
             </div>
         </section>
