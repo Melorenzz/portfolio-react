@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   gap: 40px;
-
   .connect {
     padding: 40px;
     max-width: 500px;
@@ -133,4 +132,18 @@
   .connect_comments {
     max-width: 100%;
   }
+}
+@media(max-width: 510px){
+  .connect_social{
+    margin-top: 50px;
+    .social_links{
+      grid-template-columns: repeat(1, 1fr);
+      .link {
+        &:first-child {
+          grid-column: 1 / 1;
+        }
+      }
+    }
+  }
+  
 }
