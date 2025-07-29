@@ -30,9 +30,7 @@ function Home() {
                 console.log('Ошибка загрузки:', error);
             }
             finally {
-                setTimeout(() => {
-                    setLoading(false)
-                }, 2000)
+                setLoading(false)
             }
         }
 
