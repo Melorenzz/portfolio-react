@@ -18,17 +18,17 @@ function About({projects, certificates}) {
                             A self-taught Front-End developer with a strong passion for creating engaging and user-friendly digital experiences. Deeply interested in Front-End technologies, I constantly explore new tools and trends to improve my skills. I always aim to deliver high-quality and effective solutions in every project I work on.
                         </p>
                         <div data-aos="fade-up" className='about_buttons'>
-                            <a href=''>Download CV</a>
+                            <a target='_blank' href='/MelorenzCV.pdf'>Download CV</a>
                             <a href='#showcase'>View Projects</a>
                         </div>
 
                     </div>
                     <div data-aos="fade-left">
                         <div  className='my_ava'>
-                            <img
-                                loading='lazy'
-                                src="/images/myAva.png"
-                                alt=""/>
+                            {/*<img*/}
+                            {/*    loading='lazy'*/}
+                            {/*    src="/images/myAva.png"*/}
+                            {/*    alt=""/>*/}
                             <div className="pulse-ring"></div>
                         </div>
                     </div>
