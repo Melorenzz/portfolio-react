@@ -45,7 +45,7 @@ function Home() {
             renderer: "svg",
             loop: true,
             autoplay: true,
-            path: "/anim.json",
+            path: "/portfolio-react/anim.json",
         });
 
         return () => anim.destroy();
@@ -83,14 +83,14 @@ function Home() {
                         </nav>
                         <div data-aos-delay="1100" data-aos="fade-up" className="socials">
                             <a href='https://github.com/Melorenzz' className="block">
-                                <img loading='lazy' src="/images/icons/github.svg" alt=""/>
+                                <img loading='lazy' src="/portfolio-react/images/icons/github.svg" alt=""/>
                             </a>
                             <a href='https://www.linkedin.com/in/mykhailo-voronov-3630a7356/' className="block">
-                                <img loading='lazy' src="/images/icons/linkedin.svg" alt=""/>
+                                <img loading='lazy' src="/portfolio-react/images/icons/linkedin.svg" alt=""/>
 
                             </a>
                             <a href='https://www.instagram.com/melorenz_/' className="block">
-                                <img loading='lazy' src="/images/icons/instagram.svg" alt=""/>
+                                <img loading='lazy' src="/portfolio-react/images/icons/instagram.svg" alt=""/>
                             </a>
                         </div>
                     </div>

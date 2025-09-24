@@ -14,7 +14,7 @@ function App() {
     }, []);
 
     return (
-        <BrowserRouter>
+        <>
             <Header/>
             <main>
                 <Routes>
@@ -23,7 +23,7 @@ function App() {
                 </Routes>
             </main>
             <Footer/>
-        </BrowserRouter>
+        </>
     )
 }
 

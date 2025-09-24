@@ -78,7 +78,7 @@ export default function Comments(){
             <div data-aos="fade-up" className="comments_container">
                 <div className='comments_header'>
                     <div className='icon'>
-                        <img loading='lazy' src="/images/icons/comments.svg" alt=""/>
+                        <img loading='lazy' src="/portfolio-react/images/icons/comments.svg" alt=""/>
                     </div>
                     <h3>
                         Comments
@@ -118,11 +118,11 @@ export default function Comments(){
                 <div data-aos="fade-up" className='comments'>
                     <div className="comment pinned">
                         <div className='pinned_icon'>
-                            <img loading='lazy' src="/images/icons/pinned.svg" alt="pinned"/>
+                            <img loading='lazy' src="/portfolio-react/images/icons/pinned.svg" alt="pinned"/>
                             <span>Pinned Comment</span>
                         </div>
                         <div className='content'>
-                            <img loading='lazy' className='ava' src='/images/myAva.png' alt="ava"/>
+                            <img loading='lazy' className='ava' src='/portfolio-react/images/myAva.png' alt="ava"/>
                             <div className='comment_content'>
                                 <h4>Melorenz</h4>
                                 <p>Thanks for visiting! Contact me if you need anything</p>
