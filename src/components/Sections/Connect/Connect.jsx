@@ -62,16 +62,16 @@ export default function Connect() {
                             </div>
                             <div className="social_links">
                                 <ConnectButton link='https://www.linkedin.com/in/mykhailo-voronov-3630a7356/'
-                                               icon='/portfolio-react/images/icons/linkedin_color.svg' title='Lets Connect'
+                                               icon='images/icons/linkedin_color.svg' title='Lets Connect'
                                                description='On LinkedIn'/>
                                 <ConnectButton link='https://www.instagram.com/melorenz_/'
-                                               icon='/portfolio-react/images/icons/instagram_color.svg' title='Instagram'
+                                               icon='images/icons/instagram_color.svg' title='Instagram'
                                                description='@melorenz_'/>
-                                <ConnectButton link='https://github.com/Melorenzz' icon='/portfolio-react/images/icons/github_color.svg'
+                                <ConnectButton link='https://github.com/Melorenzz' icon='images/icons/github_color.svg'
                                                title='Github' description='@melorenzz'/>
-                                <ConnectButton link='https://discord.gg/9nXRwysqVw' icon='/portfolio-react/images/icons/discord.svg'
+                                <ConnectButton link='https://discord.gg/9nXRwysqVw' icon='images/icons/discord.svg'
                                                title='Discord' description='@melorenz'/>
-                                <ConnectButton link='https://t.me/Melorenz' icon='/portfolio-react/images/icons/telegram.svg'
+                                <ConnectButton link='https://t.me/Melorenz' icon='images/icons/telegram.svg'
                                                title='Telegram' description='@melorenz'/>
                             </div>
                         </div>

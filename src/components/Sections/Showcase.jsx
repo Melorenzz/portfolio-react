@@ -7,15 +7,15 @@ export default function Showcase({projects, certificates, loading}) {
     const [selectedCategory, setSelectedCategory] = useState('Projects')
     const techStack = useMemo(() =>
         [
-            {image: '/portfolio-react/images/icons/html-icon.svg', title: 'HTML', anim: 'right'},
-            {image: '/portfolio-react/images/icons/css-icon.svg', title: 'CSS', anim: 'down'},
-            {image: '/portfolio-react/images/icons/javascript-icon.svg', title: 'JavaScript', anim: 'left'},
-            {image: '/portfolio-react/images/icons/sass-icon.svg', title: 'SCSS', anim: 'right'},
-            {image: '/portfolio-react/images/icons/tailwind-css-icon.svg', title: 'Tailwind CSS', anim: 'down'},
-            {image: '/portfolio-react/images/icons/react-js-icon.svg', title: 'ReactJS', anim: 'left'},
-            {image: '/portfolio-react/images/icons/vite-icon.svg', title: 'Vite', anim: 'right'},
-            {image: '/portfolio-react/images/icons/typescript.svg', title: 'TypeScript', anim: 'right'},
-            {image: '/portfolio-react/images/icons/zustand.svg', title: 'Zustand', anim: 'down'},
+            {image: 'images/icons/html-icon.svg', title: 'HTML', anim: 'right'},
+            {image: 'images/icons/css-icon.svg', title: 'CSS', anim: 'down'},
+            {image: 'images/icons/javascript-icon.svg', title: 'JavaScript', anim: 'left'},
+            {image: 'images/icons/sass-icon.svg', title: 'SCSS', anim: 'right'},
+            {image: 'images/icons/tailwind-css-icon.svg', title: 'Tailwind CSS', anim: 'down'},
+            {image: 'images/icons/react-js-icon.svg', title: 'ReactJS', anim: 'left'},
+            {image: 'images/icons/vite-icon.svg', title: 'Vite', anim: 'right'},
+            {image: 'images/icons/typescript.svg', title: 'TypeScript', anim: 'right'},
+            {image: 'images/icons/zustand.svg', title: 'Zustand', anim: 'down'},
 
         ]
     , [])
@@ -28,17 +28,17 @@ export default function Showcase({projects, certificates, loading}) {
                     <div className='selector'>
                         <button onClick={() => setSelectedCategory('Projects')}
                                 className={selectedCategory === 'Projects' ? 'item_active' : 'item'}>
-                            <img loading='lazy' src="/portfolio-react/images/icons/projects.svg" alt=""/>
+                            <img loading='lazy' src="images/icons/projects.svg" alt=""/>
                             Projects
                         </button>
                         <button onClick={() => setSelectedCategory('Certificates')}
                                 className={selectedCategory === 'Certificates' ? 'item_active' : 'item'}>
-                            <img loading='lazy' src="/portfolio-react/images/icons/certificates.svg" alt=""/>
+                            <img loading='lazy' src="images/icons/certificates.svg" alt=""/>
                             Certificates
                         </button>
                         <button onClick={() => setSelectedCategory('Tech Stack')}
                                 className={selectedCategory === 'Tech Stack' ? 'item_active' : 'item'}>
-                            <img loading='lazy' src="/portfolio-react/images/icons/tech-stack.svg" alt=""/>
+                            <img loading='lazy' src="images/icons/tech-stack.svg" alt=""/>
                             Tech Stack
                         </button>
                     </div>

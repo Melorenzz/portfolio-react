@@ -18,7 +18,7 @@ function About({projects, certificates}) {
                             A self-taught Front-End developer with a strong passion for creating engaging and user-friendly digital experiences. Deeply interested in Front-End technologies, I constantly explore new tools and trends to improve my skills. I always aim to deliver high-quality and effective solutions in every project I work on.
                         </p>
                         <div data-aos="fade-up" className='about_buttons'>
-                            <a target='_blank' href='/portfolio-react/MelorenzCV.pdf' download={true}>Download CV</a>
+                            <a target='_blank' href='MelorenzCV.pdf' download={true}>Download CV</a>
                             <a href='#showcase'>View Projects</a>
                         </div>
 
@@ -27,7 +27,7 @@ function About({projects, certificates}) {
                         <div  className='my_ava'>
                             <img
                                 loading='lazy'
-                                src="/portfolio-react/images/myAva.png"
+                                src="images/myAva.png"
                                 alt=""/>
                             <div className="pulse-ring"></div>
                         </div>
@@ -35,9 +35,9 @@ function About({projects, certificates}) {
 
                 </div>
                <div className='about_columns'>
-                   <Card icon='/portfolio-react/images/icons/total_projects.svg' link='#showcase' count={projects.length} title='TOTAL PROJECTS' description='Innovative web solutions crafted' />
-                   <Card icon='/portfolio-react/images/icons/certificates_card.svg' link='#showcase' count={certificates.length} title='CERTIFICATES' description='Professional skills validated' />
-                   <Card icon='/portfolio-react/images/icons/experience.svg' link='#showcase' count={1} title='YEARS OF EXPERIENCE' description='Continuous learning journey' />
+                   <Card icon='images/icons/total_projects.svg' link='#showcase' count={projects.length} title='TOTAL PROJECTS' description='Innovative web solutions crafted' />
+                   <Card icon='images/icons/certificates_card.svg' link='#showcase' count={certificates.length} title='CERTIFICATES' description='Professional skills validated' />
+                   <Card icon='images/icons/experience.svg' link='#showcase' count={1} title='YEARS OF EXPERIENCE' description='Continuous learning journey' />
 
                </div>
            </div>
