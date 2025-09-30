@@ -18,7 +18,7 @@ function About({projects, certificates}) {
                             A self-taught Front-End developer with a strong passion for creating engaging and user-friendly digital experiences. Deeply interested in Front-End technologies, I constantly explore new tools and trends to improve my skills. I always aim to deliver high-quality and effective solutions in every project I work on.
                         </p>
                         <div data-aos="fade-up" className='about_buttons'>
-                            <a target='_blank' href='MelorenzCV.pdf' download={true}>Download CV</a>
+                            <a target='_blank' href='https://drive.google.com/drive/folders/1nt-6XIe2kQfTf_Wt564N11XUfa4z0rtZ?usp=sharing'>Download CV</a>
                             <a href='#showcase'>View Projects</a>
                         </div>
 
