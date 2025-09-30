@@ -1,6 +1,6 @@
-import Header from './components/Layout/Header.jsx'
+import Header from './components/Header.jsx'
 import Home from './components/Sections/Home.jsx'
-import Footer from './components/Layout/Footer.jsx'
+import Footer from './components/Footer.jsx'
 import {useEffect} from "react";
 import AOS from 'aos';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
@@ -19,7 +19,7 @@ function App() {
             <main>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/admin" element={<Home/>}/>
+                    {/*<Route path="/admin" element={<Home/>}/>*/}
                 </Routes>
             </main>
             <Footer/>

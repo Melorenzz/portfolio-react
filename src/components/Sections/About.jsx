@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../UI/Card.jsx";
+import Card from "../../UI/Card.jsx";
 
 function About({projects, certificates}) {
 

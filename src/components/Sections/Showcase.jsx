@@ -1,8 +1,8 @@
 import {useState, useMemo} from 'react'
-import Projects from "../UI/Projects.jsx";
-import Certificates from "../UI/Certificates.jsx";
-import TechStack from "../UI/TechStack.jsx";
-import Skeleton from "../UI/Skeleton.jsx";
+import Projects from "../../UI/Projects.jsx";
+import Certificates from "../../UI/Certificates.jsx";
+import TechStack from "../../UI/TechStack.jsx";
+import Skeleton from "../../UI/Skeleton.jsx";
 export default function Showcase({projects, certificates, loading}) {
     const [selectedCategory, setSelectedCategory] = useState('Projects')
     const techStack = useMemo(() =>

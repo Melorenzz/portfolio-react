@@ -1,4 +1,9 @@
-export default function Comment({message}){
+import {useState} from "react";
+
+export default function Comment({message, isLikedByAdmin}){
+
+    const [isVisibleClue, setIsVisibleClue] = useState(false);
+
     return(
         <div key={message.id} className="comment">
             {message.ava ? (<img loading='lazy' className='ava' src={message.ava} alt="ava"/>) : (
@@ -15,8 +20,21 @@ export default function Comment({message}){
             )}
 
             <div className='comment_content'>
-                <h4>{message.username}</h4>
-                <p>{message.message}</p>
+                <div>
+                    <h4>{message.username}</h4>
+                    <p>{message.message}</p>
+                </div>
+                <div className='like'>
+                    {isLikedByAdmin && (
+                        <img onMouseLeave={() => setIsVisibleClue(false)} onMouseEnter={() => setIsVisibleClue(true)} title='Liked by admin' src="images/icons/like.svg" alt="like"/>
+                    )}
+                    {isVisibleClue && (
+                        <div className='clue'>
+                            Liked by admin
+                        </div>
+                    )}
+                </div>
+
             </div>
         </div>
     )

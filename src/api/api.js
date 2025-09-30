@@ -33,3 +33,24 @@ export async function postMessage(userMessage) {
     const res = await axiosInstance.post('/comments', userMessage);
     return res.data;
 }
+
+export async function login(email, password) {
+    try {
+        const { data } = await authInstance.post('/token?grant_type=password', {
+            email,
+            password,
+        });
+
+        // data.access_token = токен для дальнейших запросов
+        // data.user = данные пользователя
+        console.log("Login success:", data);
+
+        // Пример: сохраняем токен в localStorage
+        localStorage.setItem("supabase_token", data.access_token);
+
+        return data;
+    } catch (error) {
+        console.error("Login error:", error.response?.data || error.message);
+        return null;
+    }
+}

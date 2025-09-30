@@ -1,4 +1,4 @@
-import '../../scss/skeleton.scss';
+import '../scss/Skeleton.scss';
 
 export default function Skeleton({ type = 'projects', count = 3 }) {
     const renderSkeletonItems = () => {

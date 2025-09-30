@@ -1,14 +1,18 @@
 import {useEffect, useState} from "react";
-import ButtonForm from "../../UI/ButtonForm.jsx";
-import Comment from "../../UI/Comment.jsx";
-import InputForm from "../../UI/InputForm.jsx";
-import TextareaForm from "../../UI/TextareaForm.jsx";
-import {getComments, postMessage} from "../../../api.js";
+import ButtonForm from "../../../UI/ButtonForm.jsx";
+import Comment from "../../../UI/Comment.jsx";
+import InputForm from "../../../UI/InputForm.jsx";
+import TextareaForm from "../../../UI/TextareaForm.jsx";
+import {getComments, postMessage} from "../../../api/api.js";
 
 export default function Comments(){
     const [userComment, setUserComment] = useState({});
 
     const [comments, setComments] = useState([]);
+
+    useEffect(()=>{
+        console.log(comments)
+    }, [comments])
 
     const [isDisabledPost, setIsDisabledPost] = useState(false);
     useEffect(() => {
@@ -124,13 +128,16 @@ export default function Comments(){
                         <div className='content'>
                             <img loading='lazy' className='ava' src='images/myAva.png' alt="ava"/>
                             <div className='comment_content'>
-                                <h4>Melorenz</h4>
-                                <p>Thanks for visiting! Contact me if you need anything</p>
+                                <div>
+                                    <h4>Melorenz</h4>
+                                    <p>Thanks for visiting! Contact me if you need anything</p>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                     {comments.map((message) => (
-                        <Comment message={message} key={message.id} />
+                        <Comment isLikedByAdmin={message.isLikedByAdmin} message={message} key={message.id} />
                     ))}
 
 

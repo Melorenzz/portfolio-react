@@ -1,8 +1,8 @@
 import Comments from "./Comments.jsx";
-import ButtonForm from "../../UI/ButtonForm.jsx";
-import InputForm from "../../UI/InputForm.jsx";
-import ConnectButton from "../../UI/ConnectButton.jsx";
-import TextareaForm from "../../UI/TextareaForm.jsx";
+import ButtonForm from "../../../UI/ButtonForm.jsx";
+import InputForm from "../../../UI/InputForm.jsx";
+import ConnectButton from "../../../UI/ConnectButton.jsx";
+import TextareaForm from "../../../UI/TextareaForm.jsx";
 import emailjs from '@emailjs/browser';
 import {useState, useRef } from "react";
 

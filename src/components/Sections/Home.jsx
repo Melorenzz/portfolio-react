@@ -5,16 +5,15 @@ import About from "./About.jsx";
 import Showcase from "./Showcase.jsx";
 import Connect from './Connect/Connect.jsx'
 import axios from "axios";
-import {getProjects} from "../../api.js";
-import {getCertificates} from "../../api.js";
+import {getProjects} from "../../api/api.js";
+import {getCertificates} from "../../api/api.js";
 
 function Home() {
 
-    const tags = ['React', "JavaScript", "SCSS", "Tailwind"]
     const [loading, setLoading] = useState(true)
-
     const [projects, setProjects] = useState([]);
     const [certificates, setCertificates] = useState([]);
+    const tags = ['React', "JavaScript", "SCSS", "Tailwind"]
 
     useEffect(() => {
         async function fetchData() {
@@ -38,6 +37,7 @@ function Home() {
     }, []);
 
 
+
     const lottieRef = useRef(null);
     useEffect(() => {
         const anim = lottie.loadAnimation({
@@ -50,6 +50,8 @@ function Home() {
 
         return () => anim.destroy();
     }, []);
+
+
 
     return (
         <>
